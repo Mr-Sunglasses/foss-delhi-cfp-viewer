@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSV Data</title>
+    <style>
+        <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 8px;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Email</th>
+				<th>Talk Duration</th>
+				<th>Talk Description</th>
+				<th>Name</th>
+				<th>Talk Title</th>
+				<th>LinkedIn URL</th>
+				<th>Bio</th>
+				<th>Source code / Reference link</th>
+				<th>Twitter URL</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for row in data %}
+			<tr>
+				<td>{{ row['ID'] }}</td>
+				<td>{{ row['Email'] }}</td>
+				<td>{{ row['Talk Duration'] }}</td>
+				<td>{{ row['Talk Description'] }}</td>
+				<td>{{ row['Name'] }}</td>
+				<td>{{ row['Talk Title'] }}</td>
+				<td>{{ row['LinkedIn URL'] }}</td>
+				<td>{{ row['Bio'] }}</td>
+				<td>{{ row['Source code / Reference link'] }}</td>
+				<td>{{ row['Twitter URL'] }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+    </div>
+</body>
+</html>
+
